@@ -15,7 +15,7 @@ If [ $(getent passwd $USERNAME) ];
 then
 echo $USERNAME already exists
 else
-    sudo useradd -m -G developers $USERNAME
+    sudo useradd -m -G developers -s /bin/bash $USERNAME
     sudo echo -e "$PASSWORD\n$PASSWORD" | sudo passwd "${USERNAME}""
     mkdir home/$USERNAME/home/.ssh
     touch home/$USERNAME/home/.ssh/authorized_keys
